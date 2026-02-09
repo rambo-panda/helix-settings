@@ -1,0 +1,17 @@
+theme = "monokai"
+
+## no support:  https://www.reddit.com/r/HelixEditor/comments/1qic88g/darklight_theme_switching_now_works_with_ghostty/?utm_source=openai
+#[theme]
+#light="monokai"
+#dark="monokai"
+
+[editor]
+line-number = "relative"  # 显示相对行号 default: absolute
+
+[editor.auto-save]
+focus-lost=true
+after-delay.enable=true
+after-delay.timeout=1000
+
+[editor.cursor-shape]
+insert = "bar"
