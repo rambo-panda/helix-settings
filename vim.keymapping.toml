@@ -19,12 +19,18 @@ k = ["extend_line_above", "extend_line_above", "delete_selection"]
 down = ["extend_line_below", "extend_line_below", "delete_selection"]
 up = ["extend_line_above", "extend_line_above", "delete_selection"]
 
+[keys.normal.y]
+y = ["extend_line_below", "yank"]
+j = ["extend_line_below", "extend_line_below", "yank"]
+k = ["extend_line_above", "extend_line_above", "yank"]
+down = ["extend_line_below", "extend_line_below", "yank"]
+up = ["extend_line_above", "extend_line_above", "yank"]
 
 [keys.select]
 esc = ["collapse_selection", "normal_mode"]
 G = "extend_to_last_line"
-# 你说的现象是因为我们在 select 模式 用的是 extend_line_*，它只会“扩展”，不会按锚点“缩回”。
-# Helix 里有专门的 select_line_above/below，会根据锚点自动扩展或收缩，行为更接近 Vim 的行选择。
+# Helix 选择模式中 extend_line_*，它只会“扩展”，不会按锚点“缩回”。
+# Helix 选择模式中 select_line_above/below，会根据锚点自动扩展或收缩，行为更接近 Vim 的行选择。
 j = "select_line_below"
 k = "select_line_above"
 down = "select_line_below"
