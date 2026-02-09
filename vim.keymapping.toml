@@ -20,8 +20,8 @@ k = ["select_line_above", "delete_selection"]
 
 [keys.normal.y]
 y = ["extend_line_below", "yank", "collapse_selection", "normal_mode"]
-j = ["select_line_below", "yank", "collapse_selection", "normal_mode"]
-k = ["select_line_above", "yank", "collapse_selection", "normal_mode"]
+j = ["select_line_below", "extend_line_below", "yank", "collapse_selection", "normal_mode"]
+k = ["select_line_above", "extend_line_above", "yank", "collapse_selection", "normal_mode"]
 
 [keys.select]
 esc = ["collapse_selection", "normal_mode"]
