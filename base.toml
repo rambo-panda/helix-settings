@@ -29,6 +29,7 @@ g = [
 ## TODO: 目前 Helix 不能自定义命令行（typable commands）的别名，所以不能配置 :bd 这种自定义命令
 tab = "goto_next_buffer"
 S-tab = "goto_previous_buffer"
+";" = "command_mode"
 
 ## Emacs base key mapping
 [keys.insert]
