@@ -6,7 +6,7 @@ output_file="config.toml"
 > "$output_file"
 
 files_to_merge=(
-    "config.base.toml"
+    "base.toml"
     "vim.keymapping.toml"
 )
 
