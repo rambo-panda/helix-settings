@@ -16,15 +16,11 @@ Z = {Q = ":quit!", Z = ":write-quit!"}
 d = ["extend_line_below", "delete_selection"]
 j = ["extend_line_below", "extend_line_below", "delete_selection"]
 k = ["extend_line_above", "extend_line_above", "delete_selection"]
-down = ["extend_line_below", "extend_line_below", "delete_selection"]
-up = ["extend_line_above", "extend_line_above", "delete_selection"]
 
 [keys.normal.y]
 y = ["extend_line_below", "yank"]
 j = ["extend_line_below", "extend_line_below", "yank"]
 k = ["extend_line_above", "extend_line_above", "yank"]
-down = ["extend_line_below", "extend_line_below", "yank"]
-up = ["extend_line_above", "extend_line_above", "yank"]
 
 [keys.select]
 esc = ["collapse_selection", "normal_mode"]
@@ -33,8 +29,6 @@ G = "extend_to_last_line"
 # Helix 选择模式中 select_line_above/below，会根据锚点自动扩展或收缩，行为更接近 Vim 的行选择。
 j = "select_line_below"
 k = "select_line_above"
-down = "select_line_below"
-up = "select_line_above"
 
 #Helix 自带gg 以及 num+g
 #[keys.select.g]
