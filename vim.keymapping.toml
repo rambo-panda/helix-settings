@@ -1,5 +1,4 @@
 [keys.normal]
-## vim bindings
 "," = "@<space>"
 x = "delete_char_forward"
 V = ["extend_line_below", "select_mode"]
@@ -20,8 +19,6 @@ k = ["extend_line_above", "extend_line_above", "delete_selection"]
 down = ["extend_line_below", "extend_line_below", "delete_selection"]
 up = ["extend_line_above", "extend_line_above", "delete_selection"]
 
-[keys.normal.g]
-g = "goto_file_start"
 
 [keys.select]
 esc = ["collapse_selection", "normal_mode"]
@@ -33,5 +30,8 @@ k = "select_line_above"
 down = "select_line_below"
 up = "select_line_above"
 
-[keys.select.g]
-g = "extend_to_file_start"
+#Helix 自带gg 以及 num+g
+#[keys.select.g]
+#g = "extend_to_file_start"
+#[keys.normal.g]
+#g = "goto_file_start"
