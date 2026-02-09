@@ -7,7 +7,7 @@ H = "goto_line_start"
 "^" = "goto_first_nonwhitespace"
 "$" = "goto_line_end"
 D = "kill_to_line_end"
-G = "goto_last_line"
+G = "goto_line"
 home = "goto_line_start"
 end = "goto_line_end"
 Z = {Q = ":quit!", Z = ":write-quit!"}
