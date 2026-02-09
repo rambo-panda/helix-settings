@@ -15,3 +15,12 @@ after-delay.timeout=1000
 
 [editor.cursor-shape]
 insert = "bar"
+
+[keys.normal.space]
+## Helix 的提示菜单（Space 模式）只会显示内置命令的描述，自定义 : 命令/命令序列没有可配置的“label”字段；官方也有长期未解决的需求提案在跟踪“自定义菜单标签”。(docs.helix-editor.com (https://docs.helix-editor.com/keymap.html?utm_source=openai))
+g = [
+    ":write-all",
+    ":insert-output lazygit >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
