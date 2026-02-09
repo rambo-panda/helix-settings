@@ -24,3 +24,15 @@ g = [
     ":redraw",
     ":reload-all"
 ]
+
+## Emacs base key mapping
+[keys.insert]
+C-b = "move_char_left"
+C-f = "move_char_right"
+C-h = "delete_char_backward"
+C-d = "delete_char_forward"
+C-p = "move_line_up"
+C-n = "move_line_down"
+C-j = "insert_newline"
+C-k = "kill_to_line_end"
+C-u = "kill_to_line_start"
