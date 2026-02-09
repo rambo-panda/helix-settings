@@ -15,8 +15,8 @@ u = ["undo", "collapse_selection", "normal_mode"]
 
 [keys.normal.d]
 d = ["extend_line_below", "delete_selection"]
-j = ["extend_line_below", "extend_line_below", "delete_selection"]
-k = ["extend_line_above", "extend_line_above", "delete_selection"]
+j = ["extend_visual_line_down", "extend_to_line_bounds", "delete_selection"]
+k = ["extend_visual_line_up", "extend_to_line_bounds", "delete_selection"]
 G = ["extend_to_last_line", "extend_to_line_bounds", "delete_selection"]
 
 [keys.normal.d.g]
@@ -24,8 +24,8 @@ g = ["extend_to_file_start", "extend_to_line_bounds", "delete_selection"]
 
 [keys.normal.y]
 y = ["extend_line_below", "yank", "flip_selections", "collapse_selection", "normal_mode"]
-j = ["extend_line_below", "extend_line_below", "yank", "flip_selections", "collapse_selection", "normal_mode"]
-k = ["extend_line_above", "extend_line_above", "yank", "flip_selections", "collapse_selection", "normal_mode"]
+j = ["extend_visual_line_down", "extend_to_line_bounds", "yank", "flip_selections", "collapse_selection", "normal_mode"]
+k = ["extend_visual_line_up", "extend_to_line_bounds", "yank", "flip_selections", "collapse_selection", "normal_mode"]
 G = ["extend_to_last_line", "extend_to_line_bounds", "yank", "flip_selections", "collapse_selection", "normal_mode"]
 
 [keys.normal.y.g]
