@@ -8,6 +8,7 @@ theme = "monokai"
 [editor]
 line-number = "relative"  # 显示相对行号 default: absolute
 trim-trailing-whitespace = true
+auto-format = true  # auto-format 总开关, 如果这里是false 即便lsp中auto-format:true 依然不会保存自动format
 #trim-final-newlines = true
 
 [editor.auto-save]
