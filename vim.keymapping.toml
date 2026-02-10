@@ -3,6 +3,7 @@
 x = "delete_char_forward"
 V = ["extend_line_below", "select_mode"]
 H = "goto_line_start"
+L = "goto_line_end"
 0 = "goto_line_start"
 "^" = "goto_first_nonwhitespace"
 "$" = "goto_line_end"
