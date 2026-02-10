@@ -1,0 +1,5 @@
+## https://docs.helix-editor.com/languages.html
+
+[[language]]
+name = "javascript"
+auto-format = true

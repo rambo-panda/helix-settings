@@ -5,3 +5,6 @@
     (docs.helix-editor.com (https://docs.helix-editor.com/editor.html?utm_source=openai))
 
   如果只是想避免停在换行符上再进入插入模式，可以直接用 vim中的A（insert_at_line_end）在行末进入插入。(docs.helix-editor.com (https://docs.helix-editor.com/commands.html?utm_source=openai))
+  * [`x_`](https://github.com/helix-editor/helix/discussions/2503) 
+  * [Unexpected behavior because of newline characters being selectable](https://github.com/helix-editor/helix/issues/2956) 
+  * [Add option to not have newlines selectable](https://github.com/helix-editor/helix/issues/3076)

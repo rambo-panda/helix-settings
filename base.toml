@@ -11,6 +11,21 @@ trim-trailing-whitespace = true
 auto-format = true  # auto-format 总开关, 如果这里是false 即便lsp中auto-format:true 依然不会保存自动format
 #trim-final-newlines = true
 
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+## https://docs.helix-editor.com/editor.html?highlight=auto%20format#editorwhitespace-section
+###  - nbsp = NO‑BREAK SPACE（不换行空格，U+00A0）。Unicode 官方图表里标注为 “NO‑BREAK SPACE / NBSP”，并且与普通空格同宽、禁止在此处断行。(unicode.org (https://www.unicode.org/charts/PDF/U0080.pdf?utm_source=openai))
+### - nnbsp = NARROW NO‑BREAK SPACE（窄不换行空格，U+202F）。Unicode 标准明确它是 U+00A0 的“窄版”，也同样禁止换行。(unicode.org (https://www.unicode.org/versions/latest/ch06.pdf?utm_source=openai))
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
 [editor.auto-save]
 focus-lost=true
 after-delay.enable=true
