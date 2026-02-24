@@ -18,3 +18,20 @@ Helix 的核心理念是「selection → action」：先选中对象，再对其
   * [`x_`](https://github.com/helix-editor/helix/discussions/2503) 
   * [Unexpected behavior because of newline characters being selectable](https://github.com/helix-editor/helix/issues/2956) 
   * [Add option to not have newlines selectable](https://github.com/helix-editor/helix/issues/3076)
+
+------------------------------
+
+补充：textobject 选择 vs 选择/扩展模式
+
+1) textobject 选择（如 miw / maw / mib / mi(）
+   - 在 normal 模式直接“建立一个选择”，但仍停留在 normal 模式。
+   - 选择建立后，直接执行动作（d/x/c/y 等）即可操作该范围。
+   - 适合“一步选中结构 + 立即操作”的场景。
+
+2) 选择/扩展模式（按 v 进入 select 模式）
+   - 进入模式后，移动键会“扩展/收缩”选择范围（以锚点为基准）。
+   - 更适合交互式微调范围，或连续扩展多个方向。
+
+关键差异：
+- textobject 是“命令式选中目标”，不改变当前模式；
+- select 模式是“交互式调整选择”，所有移动都在改选区。
