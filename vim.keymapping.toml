@@ -1,6 +1,6 @@
 [keys.normal]
 "," = "@<space>"
-x = "delete_char_forward"
+x = "delete_selection"
 V = ["extend_line_below", "select_mode"]
 H = "goto_line_start"
 L = "goto_line_end"
