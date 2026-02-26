@@ -2,4 +2,4 @@
 
 [[language]]
 name = "javascript"
-auto-format = true
+formatter = { command = "prettier", args = ["--write", "--stdin-filepath", "%{buffer_name}"] }
