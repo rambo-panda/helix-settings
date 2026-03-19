@@ -1,5 +1,5 @@
 [keys.normal]
-"," = "@<space>"
+# "." = "@<space>" # .不能作为leader
 x = "delete_selection"
 V = ["extend_line_below", "select_mode"]
 H = "goto_line_start"
