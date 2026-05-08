@@ -85,15 +85,13 @@ opt.listchars = {
   precedes = "\226\159\168",
 }
 
--- 行尾空格红色高亮（独立高亮组，不受主题影响）
+-- 行尾空格红色高亮（独立高亮组，不受主题影响；pcall 防 matchdelete 报错）
 vim.api.nvim_set_hl(0, "TrailSpace", { bg = "#d70000", fg = "#ffffff" })
 local trail_group = vim.api.nvim_create_augroup("TrailHighlight", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "VimEnter", "ColorScheme" }, {
   group = trail_group,
   callback = function()
-    if vim.b.trail_match_id then
-      vim.fn.matchdelete(vim.b.trail_match_id)
-    end
+    pcall(vim.fn.matchdelete, vim.b.trail_match_id)
     vim.b.trail_match_id = vim.fn.matchadd("TrailSpace", [[\s\+$]], 10, -1)
   end,
 })
@@ -153,7 +151,7 @@ autocmd("FocusLost", {
   desc = "Auto save on focus lost",
 })
 
--- 自动保存：1秒延迟保存
+-- 自动保存：1秒延迟保存（noautocmd 纯粹写入磁盘，不触发 BufWritePre 格式化）
 local save_timer = nil
 autocmd({ "TextChanged", "TextChangedI" }, {
   pattern = "*",
@@ -163,7 +161,7 @@ autocmd({ "TextChanged", "TextChangedI" }, {
     end
     save_timer = vim.fn.timer_start(1000, function()
       if vim.bo.modified and vim.bo.buftype == "" then
-        vim.cmd("silent! write")
+        vim.cmd("noautocmd silent! write")
       end
     end)
   end,
