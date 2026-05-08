@@ -77,6 +77,9 @@ opt.textwidth = 180
 -- 关闭自动格式化
 vim.g.autoformat = false
 
+-- y 不自动同步系统剪切板（"+y 才复制到系统剪切板）
+opt.clipboard = ""
+
 -- 空白字符可视化（tab 显示 →，行尾空格以红色高亮）
 opt.list = true
 opt.listchars = {

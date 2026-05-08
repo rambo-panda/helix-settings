@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -x http://127.0.0.1:7897 -s \"https://www.reddit.com/r/neovim/comments/1b0llw7/nvchad_vs_lazyvim/\")",
+      "Bash(nvim --headless +\"lua vim.print\\('Theme: ' .. vim.g.colors_name or 'none'\\)\" +quit)",
+      "Bash(rm -f ~/.local/share/nvim/lazy/monokai-pro.nvim.cloning)",
+      "Bash(git clone *)",
+      "Bash(nvim --headless +\"lua vim.print\\('Theme: ' .. \\(vim.g.colors_name or 'none'\\)\\)\" +quit)",
+      "Bash(nvim --headless +\"lua print\\('indent enabled:', vim.bo.indentexpr\\)\" +quit)",
+      "Bash(~/.local/share/nvim/mason/packages/biome/node_modules/@biomejs/biome/bin/biome init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
