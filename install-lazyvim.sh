@@ -77,15 +77,26 @@ opt.textwidth = 180
 -- 关闭自动格式化
 vim.g.autoformat = false
 
--- 空格可视化
+-- 空白字符可视化（tab 显示 →，行尾空格以红色高亮）
 opt.list = true
 opt.listchars = {
-  space = "·",
-  tab = "→ ",
-  trail = "·",
-  extends = "⟩",
-  precedes = "⟨",
+  tab = "\226\134\146 ",
+  extends = "\226\159\169",
+  precedes = "\226\159\168",
 }
+
+-- 行尾空格红色高亮（独立高亮组，不受主题影响）
+vim.api.nvim_set_hl(0, "TrailSpace", { bg = "#d70000", fg = "#ffffff" })
+local trail_group = vim.api.nvim_create_augroup("TrailHighlight", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "VimEnter", "ColorScheme" }, {
+  group = trail_group,
+  callback = function()
+    if vim.b.trail_match_id then
+      vim.fn.matchdelete(vim.b.trail_match_id)
+    end
+    vim.b.trail_match_id = vim.fn.matchadd("TrailSpace", [[\s\+$]], 10, -1)
+  end,
+})
 
 -- 缩进指示
 opt.breakindent = true
@@ -103,6 +114,13 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "Command mode" })
 map("n", "H", "^", { desc = "Go to line start" })
 map("n", "L", "$", { desc = "Go to line end" })
+
+-- 清除行尾空格（保持光标位置）
+map("n", "<leader>tw", function()
+  local pos = vim.api.nvim_win_get_cursor(0)
+  vim.cmd([[%s/\s\+$//e]])
+  vim.api.nvim_win_set_cursor(0, pos)
+end, { desc = "Trim trailing whitespace" })
 
 -- Insert mode (Emacs-style)
 map("i", "<C-b>", "<Left>", { desc = "Move left" })
@@ -270,6 +288,9 @@ echo "  - Emacs-style insert mode keybindings"
 echo "  - ; for command mode"
 echo "  - H/L for line start/end"
 echo "  - Tab to accept completion (Ctrl-n/p to navigate)"
+echo "  - Tab indicator '→' (no space dots, won't break mouse copy)"
+echo "  - Trailing whitespace highlighted in red (ErrorMsg style)"
+echo "  - <leader>tw to trim all trailing whitespace (cursor stays in place)"
 echo "  - Monokai Pro theme"
 echo "  - LSP: TypeScript, Biome, Rust, Python"
 echo "  - Formatter: Biome (replaces ESLint + Prettier)"
